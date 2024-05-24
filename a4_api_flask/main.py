@@ -16,9 +16,9 @@ def get_user(user_id):
         "email": "bob@rock.com"
     }
 
-    # extra = request.args.get("extra")
-    # if extra:
-    #     user_data["extra"] = extra
+    extra = request.args.get("extra") # http://127.0.0.1:5000/get-user/232?extra="Bum"
+    if extra:
+        user_data["extra"] = extra
     
     return jsonify(user_data), 200
 
@@ -26,8 +26,7 @@ def get_user(user_id):
 def create_user():
     data = request.get_json()
 
-    #return jsonify(data), 201
-    return data, 200
+    return jsonify("Recieved data is: ", data), 201
 
 
 if __name__ == "__main__":
