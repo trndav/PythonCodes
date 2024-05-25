@@ -46,15 +46,32 @@
 # show()
 # # Returns 8
 
-def func(x):
-    if x == 1:
-        def rv():
-            print("X is equal to 1")
-    else:
-        def rv():
-            print("X is not 1")
-    return rv
-new = func(1)
-new()
-new2 = func(2)
-new2()
+# import inspect
+
+# def func(x):
+#     if x == 1:
+#         def rv():
+#             print("X is equal to 1")
+#     else:
+#         def rv():
+#             print("X is not 1")
+#     return rv
+# new = func(1)
+# new()
+# new2 = func(2)
+# new2()
+
+# print(id(new)) # Memory address
+# print(id(func))
+
+# print(inspect.getmembers(new))
+# print("**"*20)
+# print(inspect.getsource(new)) # Source of variable
+
+
+import inspect
+from queue import Queue
+
+print(inspect.getsource(Queue)) # Source of variable
+
+
