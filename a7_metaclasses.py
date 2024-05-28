@@ -37,17 +37,54 @@
 # print(t.something)
 
 
-class Foo:
-    def show(self):
-        print("Hola!")
+# class Foo:
+#     def show(self):
+#         print("Hola!")
 
-def add_attribute(self):
-    self.z = "Added attribute"
+# def add_attribute(self):
+#     self.z = "Added attribute"
 
-Test3 = type('Test3', (Foo,), {"x":5, "add_attribute": add_attribute})
-t = Test3()
-print(t, " of type: ", type(t))
-print(t.x)
-t.show()
-t.add_attribute()
-print(t.z)
+# Test3 = type('Test3', (Foo,), {"x":5, "add_attribute": add_attribute})
+# t = Test3()
+# print(t, " of type: ", type(t))
+# print(t.x)
+# t.show()
+# t.add_attribute()
+# print(t.z)
+
+
+# class Meta(type):
+#     def __new__(self, class_name, bases, attrs):
+#         print(attrs)
+#         return type(class_name, bases, attrs)
+
+# class Dog(metaclass=Meta):
+#     x = 5
+#     y = 8
+#     def hi(self):
+#         print("hiho")
+
+
+class Meta(type):
+    def __new__(self, class_name, bases, attrs):
+        print(attrs)
+        a = {}
+        for name, value in attrs.items():
+            if name.startswith("__"):
+                a[name] = value
+            else:
+                a[name.upper()] = value
+        print(a)
+        return type(class_name, bases, a)
+
+class Dog(metaclass=Meta):
+    x = 5
+    y = 8
+    def hip(self):
+        print("hiho")
+
+d = Dog()
+# print(d.x)
+print(d.X)
+# print(d.hip())
+print(d.HIP())
