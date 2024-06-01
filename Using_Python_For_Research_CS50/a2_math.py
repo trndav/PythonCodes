@@ -17,4 +17,7 @@ print(np.sqrt([2, 5, 6, 8]))
 x = "Bob"
 print(type(x)) 
 print(dir(x)) # Check methods
-print(help(x.split))
+#print(help(x.split))
+
+print(math.factorial(4)) # 4*3*2*1
+
