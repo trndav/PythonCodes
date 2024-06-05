@@ -40,3 +40,7 @@ q[1].append(23)
 print("q is", q)
 print("w is", w)
 print("z is", z)
+
+
+address_count = {'F': 1, 'o': 93, 'u': 21}
+print(max(address_count.values()))
