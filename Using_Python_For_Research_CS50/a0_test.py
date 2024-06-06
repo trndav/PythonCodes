@@ -44,3 +44,10 @@ print("z is", z)
 
 address_count = {'F': 1, 'o': 93, 'u': 21}
 print(max(address_count.values()))
+
+
+a = [1,2,3]
+b = ["a", "b", "c"]
+print(list(zip(a,b)))
+for x in zip(a,b):
+    print(x)
