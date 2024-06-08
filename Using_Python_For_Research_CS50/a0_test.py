@@ -51,3 +51,8 @@ b = ["a", "b", "c"]
 print(list(zip(a,b)))
 for x in zip(a,b):
     print(x)
+
+
+import numpy as np
+w1 = np.random.choice(10)
+print(w1)
