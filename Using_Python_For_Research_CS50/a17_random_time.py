@@ -45,13 +45,39 @@ print(sum(random.choice(range(10)) for i in range(10)))
 
 
 # roulette probability 2 dices
-sy = []
-for rep in range(1000):
-    s = 0
-    for k in range(2):
-        a = random.choice(range(1,7))
-        s = s + a
-    sy.append(s)
-print(sy, min(sy), max(sy))
-plt.hist(sy)
-plt.show()
+# sy = []
+# for rep in range(1000):
+#     s = 0
+#     for k in range(2):
+#         a = random.choice(range(1,7))
+#         s = s + a
+#     sy.append(s)
+# print(sy, min(sy), max(sy))
+# plt.hist(sy)
+# plt.show()
+
+print("*"*20)
+
+print(np.random.random())
+print(np.random.random(5))
+print(np.random.random((3,4)))
+print(np.random.normal(0, 1)) # Standard normal distribution
+print(np.random.normal(0, 1, 5)) # Array of 5 numbers
+print(np.random.normal(0, 1, (2, 5))) # Matrix
+print(np.random.randint(1,7))
+
+X = np.random.randint(1,7, (10000, 10))
+# print(np.random.randint(1,7, (10, 3)))
+# print(X.shape)
+# print(np.sum(X))
+# print(np.sum(X, axis=0))
+# print(np.sum(X, axis=1))
+
+Y = np.sum(X, axis=1)
+# print(Y)
+# plt.hist(Y)
+# plt.show()
+
+
+print(np.random.random((2,3,4)))
+print(np.random.normal(1,2,3))
