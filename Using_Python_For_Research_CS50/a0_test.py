@@ -56,3 +56,32 @@ for x in zip(a,b):
 import numpy as np
 w1 = np.random.choice(10)
 print(w1)
+
+
+print("**"*20)
+
+
+import random
+print(random.choice(["H", "T"]))
+
+
+import numpy as np
+def create_board():
+    return np.zeros((3, 3), dtype=int)
+def place(board, player, position):
+    if board[position] == 0:
+        board[position] = player
+    return board
+board = create_board()
+board = place(board, 1, (0, 0))
+print(board)
+
+
+board = np.array([[0, 1, 2],
+                  [3, 4, 5],
+                  [6, 7, 8]])
+(row_indices, col_indices) = np.where(board == 0)
+print(row_indices)  # Output: [0 1 2]
+print(col_indices)  # Output: [0 1 2]
+
+print(board.shape[1])
