@@ -85,3 +85,89 @@ print(row_indices)  # Output: [0 1 2]
 print(col_indices)  # Output: [0 1 2]
 
 print(board.shape[1])
+
+
+import numpy as np
+import random 
+
+
+
+# Create 3x3 board for tic tac
+def create_board():
+    return np.zeros((3,3), dtype=int)
+def place(board, player, position):
+    if board[position] == 0:
+        board[position] = player
+    return board
+board = create_board()
+board[0, 0] = 1
+def possibilities(board):
+    return list(zip(*np.where(board == 0)))
+random.seed(1)
+def random_place(board, player):
+    available_position = possibilities(board)
+    if available_position:
+        choice = random.choice(available_position)
+        board[choice] = player        
+        print("Choice:", choice)
+    return board
+print(possibilities(board))
+random_place(board, 2)
+
+print("*"*20)
+
+random.seed(1)
+board = create_board()
+def random_place(board, player):
+    available_position = possibilities(board)
+    if available_position:
+        choice = random.choice(available_position)
+        print("Choice", choice)
+        board[choice] = player
+    return board
+random_place(board, 1)
+random_place(board, 2)
+random_place(board, 1)
+random_place(board, 2)
+random_place(board, 1)
+random_place(board, 2)
+
+
+def row_win(board, player):
+    for row in board:
+        if np.all(row == player):
+            return True
+    return False
+print(row_win(board, 1))
+
+
+def col_win(board, player):
+    for col in range(board.shape[1]):
+        if np.all(board[:, col] == player): # Select all rows (:) for col
+            return True
+    return False
+print(col_win(board, 1))
+
+
+board[1,1] = 2
+def diag_win(board, player):
+    # if np.all(np.diag(board)==player) or np.all(np.diag(np.fliplr(board))==player): # np.diag returns the diagonal of the array, flippr - reversed
+    #     return True
+    # else:
+    #     return False
+    if (board[0][0] == player and board[1][1] == player and board[2][2] == player) or (board[2][0] == player and board[1][1] == player and board[0][2] == player):
+        return True
+    return False
+print(diag_win(board, 2))
+
+
+def evaluate(board):
+    print(board)
+    winner = 0
+    for player in [1, 2]:
+        if row_win(board, player) or col_win(board, player) or diag_win(board, player):
+            winner = player
+    if np.all(board != 0) and winner == 0:  # Check for a draw only if the board is fully filled
+        return -1
+    return winner
+print(evaluate(board))
