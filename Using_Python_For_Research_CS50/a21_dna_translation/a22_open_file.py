@@ -1,10 +1,13 @@
 inputfile = "dna.txt"
 f = open(inputfile, "r")
+# better way:
+# with open(inputfile, "r") as f:
+#     seq = f.read()
 seq = f.read()
 
 seq = seq.replace("\n", "") # method returns new string, assign that to seq
 seq = seq.replace("\r", "") # method returns new string, assign that to seq
-print(seq)
+# print(seq)
 
 # seq3 = seq.strip() # strips only on end and start line, so does not work here (?)
 
@@ -42,3 +45,28 @@ def translate(seq):
     return protein
 
 print(translate("ATA"))
+print(seq[40:50])
+print(help(translate))
+
+def read_seq(inputfile):
+    '''
+    Reads and returns input sequence with special characters removed.
+    '''
+    with open(inputfile, "r") as f:
+        seq = f.read()
+    seq = seq.replace("\n", "")
+    seq = seq.replace("\r", "")
+    return seq
+
+prt = read_seq("protein.txt")
+dna = read_seq("dna.txt")
+
+print(dna)
+print(prt)
+print(translate(dna[20:938]))
+print(translate(dna[20:935]))
+
+print(prt == translate(dna[20:935]))
+
+print(translate(dna[20:938])[:-1]) # remove last protein element (result of translate)
+print(prt == translate(dna[20:938])[:-1])
