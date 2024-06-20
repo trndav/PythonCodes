@@ -32,6 +32,11 @@ book_dir = "./"
 # list files
 print(os.listdir(book_dir))
 
+import pandas as pandas
+stats = pd.Dataframe(columns = ("language", "author", "title", "length", "unique"))
+title_num = 1
+
+
 for book in os.listdir(book_dir):
     # sub directory
     for author in os.listdir(book_dir + "/" + language):
@@ -40,3 +45,15 @@ for book in os.listdir(book_dir):
             print(inputfile)
             text = read_book(inputfile)
             (num_unique, counts) = word_stats(count_words(text))
+            stats.loc[title_num] = language, author.capitalize(), title.replace(".txt", ""), sum(counts), num_unique 
+            title_num += 1
+
+print(stats.head())
+
+import pandas as pandas
+stats = pd.Dataframe(columns = ("language", "author", "title", "length", "unique"))
+
+table = pd.Dataframe(columns = ("name", "age"))
+table.loc[1] = "James", 22
+table.loc[2] = "Jess", 29
+print(table.columns)
