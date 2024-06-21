@@ -50,6 +50,7 @@ for book in os.listdir(book_dir):
 
 print(stats.head())
 
+
 import pandas as pandas
 stats = pd.Dataframe(columns = ("language", "author", "title", "length", "unique"))
 
@@ -57,3 +58,28 @@ table = pd.Dataframe(columns = ("name", "age"))
 table.loc[1] = "James", 22
 table.loc[2] = "Jess", 29
 print(table.columns)
+
+print(stats.length)
+print(stats.unique)
+
+
+import matplotlib.pyplot as plt 
+
+# plt.plot(stats.length, stats.unique, "bo")
+# plt.show()
+
+plt.loglog(stats.length, stats.unique, "bo")
+plt.show()
+
+print(stats[stats.language == "English"])
+
+# plt.figure(figsize = (10, 10))
+# subset = stats[stats.language == "English"]
+# plt.loglog(subset.length, subset.unique, "o", label = "English", color = "crimson")
+# subset = stats[stats.language == "French"]
+# plt.loglog(subset.length, subset.unique, "o", label = "French", color = "green")
+# plt.legend()
+# plt.xlabel("Book length")
+# plt.ylabel("Number of words")
+# plt.show()
+
