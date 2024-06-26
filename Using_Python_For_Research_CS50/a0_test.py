@@ -172,11 +172,11 @@
 #     return winner
 # print(evaluate(board))
 
-num = [1, 2, 3, 4, 5]
-for x in num:
-    print("x is:", x)
-    pos = (x + 1) % 3
-    print("x + 1 mod is:", pos)
+# num = [1, 2, 3, 4, 5]
+# for x in num:
+#     print("x is:", x)
+#     pos = (x + 1) % 3
+#     print("x + 1 mod is:", pos)
 
 
 # def encode_message(message):
@@ -199,3 +199,8 @@ for x in num:
 # message = "In this exercise we will encode a message with a Caesar cipher"
 # encoded_message = encode_message(message)
 # print(encoded_message)
+
+
+import os
+entries = os.listdir()
+print(entries)

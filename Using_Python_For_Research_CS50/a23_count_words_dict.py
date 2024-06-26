@@ -1,4 +1,4 @@
-text = "This is test text. We are keeping this text short to keep things manageable. !Test text!"
+# text = "This comprehension check is to check for comprehension."
 
 def count_words(text):
     '''
@@ -18,27 +18,26 @@ def count_words(text):
             word_count[word] = 1
     return word_count 
 
-print(count_words(text))
 
 
 # With collections library
-from collections import Counter
-def count_words_with_counter(text):
-    '''
-    Count words in string and adds them to dictionary.
-    '''
-    text = text.lower()
-    skip = [".", ",", "!", "?", "'", '"', ":", ";"]
-    for char in skip:
-        text = text.replace(char, "")
+# from collections import Counter
+# def count_words_with_counter(text):
+#     '''
+#     Count words in string and adds them to dictionary.
+#     '''
+#     text = text.lower()
+#     skip = [".", ",", "!", "?", "'", '"', ":", ";"]
+#     for char in skip:
+#         text = text.replace(char, "")
 
-    word_count = Counter(text.split(" "))
-    return word_count
+#     word_count = Counter(text.split(" "))
+#     return word_count
 
-print(count_words_with_counter(text))
+# print(count_words_with_counter(text))
 
 
-text = read_book("book.txt")
+
 
 def read_book(title_path):
     ''' 
@@ -49,7 +48,10 @@ def read_book(title_path):
         text = text.replace("\n", "").replace("\r", "")
     return text
 
-print(read_book("book.txt"))
+#print(count_words(read_book("./English/shakespeare/Romeo and Juliet.txt")))
+
+# print(read_book("./English/shakespeare/Romeo and Juliet.txt"))
+#text = read_book("book.txt")
 
 
 
@@ -61,10 +63,10 @@ def word_stats(count_words):
     counts = count_words.values()
     return (num_unique, counts)
 
-text = read_book("book.txt")
-words_count = count_words(text)
+text = read_book("./English/shakespeare/Romeo and Juliet.txt")
+word_count = count_words(text)
 
-(num_unique, counts) = word_stats(words_count)
+(num_unique, counts) = word_stats(word_count)
 
 print("Unique words: ", num_unique)
 print("Total sum words: ", sum(counts))
