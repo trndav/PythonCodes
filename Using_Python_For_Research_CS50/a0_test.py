@@ -201,6 +201,13 @@
 # print(encoded_message)
 
 
-import os
-entries = os.listdir()
-print(entries)
+# import os
+# entries = os.listdir()
+# print(entries)
+
+
+test = ["Bob", "Alan", "Grunf"]
+print(list(enumerate(test)))
+for index, value in enumerate(test):
+    print(index, value )
+
