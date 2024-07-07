@@ -54,17 +54,63 @@ bird_names = pd.unique(birddata.bird_name)
 
 
 
-plt.figure(figsize=(8,4))
-speed = birddata.speed_2d[birddata.bird_name == "Eric"]
-ind = np.isnan(speed)
-plt.hist(speed[~ind], bins=np.linspace(0, 30, 20))
-plt.xlabel("2D speed (m/s) with pyplot")
-plt.ylabel("Frequency")
-plt.show()
+# plt.figure(figsize=(8,4))
+# speed = birddata.speed_2d[birddata.bird_name == "Eric"]
+# ind = np.isnan(speed)
+# plt.hist(speed[~ind], bins=np.linspace(0, 30, 20))
+# plt.xlabel("2D speed (m/s) with pyplot")
+# plt.ylabel("Frequency")
+# plt.show()
 
 
 
 # Histogram in Pandas
-birddata.speed_2d.plot(kind = "hist", range=[0, 30])
-plt.xlabel("2D speed with Pandas")
+# birddata.speed_2d.plot(kind = "hist", range=[0, 30])
+# plt.xlabel("2D speed with Pandas")
+# plt.show()
+
+
+
+# measure elapsed time, timestamped events
+print(birddata.date_time[0:5]) # 0    2013-08-15 00:18:08+00
+
+import datetime
+# Convert timestampy to datetime objects
+time_1 = datetime.datetime.today()
+print(time_1)
+time_2 = datetime.datetime.today()
+print(time_2 - time_1) # Timedelta object
+
+date_str = birddata.date_time[0]
+print(date_str)
+print(date_str[:-3])
+
+print(datetime.datetime.strptime(date_str[:-3], "%Y-%m-%d %H:%M:%S"))
+
+timestamps = []
+for k in range(len(birddata)):
+    timestamps.append(datetime.datetime.strptime\
+    (birddata.date_time.iloc[k][:-3], "%Y-%m-%d %H:%M:%S"))
+print(timestamps[:5])
+print(timestamps[0])
+
+# Create Panda series object and insert timestamps
+birddata["timestamp"] = pd.Series(timestamps, index = birddata.index)
+print(birddata.head())
+print(birddata.timestamp[5] - birddata.timestamp[0])
+
+
+times = birddata.timestamp[birddata.bird_name == "Eric"]
+elapsed_time = [time - times[0] for time in times]
+print(elapsed_time[1000])
+
+print(elapsed_time[1000] / datetime.timedelta(days = 1)) # How much days passed from first timestamp
+print(elapsed_time[1000] / datetime.timedelta(hours = 1)) # Hours
+
+
+# Make plot for timestamps
+plt.plot(np.array(elapsed_time) / datetime.timedelta(days = 1))
+plt.xlabel("Observation")
+plt.ylabel("Elapsed time (days)")
+plt.savefig("timeplot.pdf")
 plt.show()
