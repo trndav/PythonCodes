@@ -72,45 +72,73 @@ bird_names = pd.unique(birddata.bird_name)
 
 
 # measure elapsed time, timestamped events
-print(birddata.date_time[0:5]) # 0    2013-08-15 00:18:08+00
+# print(birddata.date_time[0:5]) # 0    2013-08-15 00:18:08+00
 
 import datetime
-# Convert timestampy to datetime objects
-time_1 = datetime.datetime.today()
-print(time_1)
-time_2 = datetime.datetime.today()
-print(time_2 - time_1) # Timedelta object
+# # Convert timestamps to datetime objects
+# time_1 = datetime.datetime.today()
+# print(time_1)
+# time_2 = datetime.datetime.today()
+# print(time_2 - time_1) # Timedelta object
 
-date_str = birddata.date_time[0]
-print(date_str)
-print(date_str[:-3])
+# date_str = birddata.date_time[0]
+# print(date_str)
+# print(date_str[:-3])
 
-print(datetime.datetime.strptime(date_str[:-3], "%Y-%m-%d %H:%M:%S"))
+# print(datetime.datetime.strptime(date_str[:-3], "%Y-%m-%d %H:%M:%S"))
 
 timestamps = []
 for k in range(len(birddata)):
     timestamps.append(datetime.datetime.strptime\
     (birddata.date_time.iloc[k][:-3], "%Y-%m-%d %H:%M:%S"))
-print(timestamps[:5])
-print(timestamps[0])
+# print(timestamps[:5])
+# print(timestamps[0])
 
-# Create Panda series object and insert timestamps
+# # Create Panda series object and insert timestamps
 birddata["timestamp"] = pd.Series(timestamps, index = birddata.index)
-print(birddata.head())
-print(birddata.timestamp[5] - birddata.timestamp[0])
+# print(birddata.head())
+# print(birddata.timestamp[5] - birddata.timestamp[0])
 
 
-times = birddata.timestamp[birddata.bird_name == "Eric"]
+# times = birddata.timestamp[birddata.bird_name == "Eric"]
+# elapsed_time = [time - times[0] for time in times]
+# print(elapsed_time[1000])
+
+# print(elapsed_time[1000] / datetime.timedelta(days = 1)) # How much days passed from first timestamp
+# print(elapsed_time[1000] / datetime.timedelta(hours = 1)) # Hours
+
+
+# # Make plot for timestamps
+# plt.plot(np.array(elapsed_time) / datetime.timedelta(days = 1))
+# plt.xlabel("Observation")
+# plt.ylabel("Elapsed time (days)")
+# plt.savefig("timeplot.pdf")
+# plt.show()
+
+
+# Calculate daily mean speed
+# Calculate mean speed per day
+
+data = birddata[birddata.bird_name == "Eric"]
+times = data.timestamp
 elapsed_time = [time - times[0] for time in times]
-print(elapsed_time[1000])
+elapsed_days = np.array(elapsed_time) / datetime.timedelta(days = 1)
 
-print(elapsed_time[1000] / datetime.timedelta(days = 1)) # How much days passed from first timestamp
-print(elapsed_time[1000] / datetime.timedelta(hours = 1)) # Hours
+next_day = 1
+inds = []
+daily_mean_speed = []
+for (i, t) in enumerate(elapsed_days): # i-index, t-time
+    if t < next_day:
+        inds.append(i)
+    else: 
+        daily_mean_speed.append(np.mean(data.speed_2d[inds]))
+        next_day += 1
+        inds = []
 
-
-# Make plot for timestamps
-plt.plot(np.array(elapsed_time) / datetime.timedelta(days = 1))
-plt.xlabel("Observation")
-plt.ylabel("Elapsed time (days)")
-plt.savefig("timeplot.pdf")
+plt.figure(figsize = (8,6))
+plt.plot(daily_mean_speed)
+plt.xlabel("Day")
+plt.ylabel("Mean speed m/s")
+plt.savefig("mean_daily_speed.pdf")
 plt.show()
+
