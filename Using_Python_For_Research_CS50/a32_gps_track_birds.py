@@ -135,10 +135,32 @@ for (i, t) in enumerate(elapsed_days): # i-index, t-time
         next_day += 1
         inds = []
 
-plt.figure(figsize = (8,6))
-plt.plot(daily_mean_speed)
-plt.xlabel("Day")
-plt.ylabel("Mean speed m/s")
-plt.savefig("mean_daily_speed.pdf")
-plt.show()
+# plt.figure(figsize = (8,6))
+# plt.plot(daily_mean_speed)
+# plt.xlabel("Day")
+# plt.ylabel("Mean speed m/s")
+# plt.savefig("mean_daily_speed.pdf")
+# plt.show()
 
+
+# Using the Cartopy Library
+
+import cartopy.crs as ccrs
+import cartopy.feature as cfeature
+
+proj = ccrs.Mercator()
+plt.figure(figsize = (10,10))
+ax = plt.axes(projection = proj)
+ax.set_extent((-25.0, 20.0, 52.0, 10.0))
+ax.add_feature(cfeature.LAND)
+ax.add_feature(cfeature.OCEAN)
+ax.add_feature(cfeature.COASTLINE)
+ax.add_feature(cfeature.BORDERS, linestyle=':')
+
+for name in bird_names:
+    ix = birddata['bird_name'] == name
+    x, y = birddata.longitude[ix], birddata.latitude[ix]
+    ax.plot(x, y, '.', transform=ccrs.Geodetic(), label=name)
+plt.legend(loc = "upper left")
+plt.savefig("map.pdf")
+plt.show()
