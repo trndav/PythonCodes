@@ -93,5 +93,28 @@ def er_graph(N, p):
     return G
 
 nx.draw(er_graph(10, 0), node_size=30, node_color="gray")
-plt.savefig("erdos_renyi_graph.pdf")
+# plt.savefig("erdos_renyi_graph.pdf")
+# plt.show()
+
+
+
+def plot_degree_distribution(G):
+    degrees = [d for n, d in G.degree()]
+    plt.hist(degrees, histtype="step")
+    plt.xlabel("Degree $k$")
+    plt.ylabel("$P(k)$")
+    plt.title("Degree distribution")
+
+# G = er_graph(500, 0.08)
+# plot_degree_distribution(G)
+# plt.savefig("hist1_plot_degree_distribution.pdf")
+# plt.show()
+
+G1 = er_graph(500, 0.08)
+plot_degree_distribution(G1)
+G2 = er_graph(500, 0.08)
+plot_degree_distribution(G2)
+G3 = er_graph(500, 0.08)
+plot_degree_distribution(G3)
+plt.savefig("hist2_plot_degree_distribution.pdf")
 plt.show()
