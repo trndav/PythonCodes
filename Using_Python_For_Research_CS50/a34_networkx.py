@@ -101,20 +101,44 @@ nx.draw(er_graph(10, 0), node_size=30, node_color="gray")
 def plot_degree_distribution(G):
     degrees = [d for n, d in G.degree()]
     plt.hist(degrees, histtype="step")
-    plt.xlabel("Degree $k$")
-    plt.ylabel("$P(k)$")
+    plt.xlabel("Degree")
+    plt.ylabel("P")
     plt.title("Degree distribution")
 
-# G = er_graph(500, 0.08)
-# plot_degree_distribution(G)
-# plt.savefig("hist1_plot_degree_distribution.pdf")
+# # G = er_graph(500, 0.08)
+# # plot_degree_distribution(G)
+# # plt.savefig("hist1_plot_degree_distribution.pdf")
+# # plt.show()
+
+# G1 = er_graph(500, 0.08)
+# plot_degree_distribution(G1)
+# G2 = er_graph(500, 0.08)
+# plot_degree_distribution(G2)
+# G3 = er_graph(500, 0.08)
+# plot_degree_distribution(G3)
+# plt.savefig("hist2_plot_degree_distribution.pdf")
 # plt.show()
 
-G1 = er_graph(500, 0.08)
+
+
+# adjacency matrix
+import numpy as np
+
+A1 = np.loadtxt("adj_allVillageRelationships_vilno_1.csv", delimiter=",")
+A2 = np.loadtxt("adj_allVillageRelationships_vilno_2.csv", delimiter=",")
+
+G1 = nx.to_networkx_graph(A1)
+G2 = nx.to_networkx_graph(A2)
+
+def basic_net_stats(G):
+    print("G.number_of_nodes()", G.number_of_nodes())
+    print("G.number_of_edges()", G.number_of_edges())
+    #print("Average degree", np.mean(list(G.degree().values())))
+
+basic_net_stats(G1)
+basic_net_stats(G2)
 plot_degree_distribution(G1)
-G2 = er_graph(500, 0.08)
 plot_degree_distribution(G2)
-G3 = er_graph(500, 0.08)
-plot_degree_distribution(G3)
-plt.savefig("hist2_plot_degree_distribution.pdf")
+plt.savefig("village.hist.pdf")
 plt.show()
+
