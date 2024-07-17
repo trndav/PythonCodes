@@ -92,7 +92,7 @@ def er_graph(N, p):
                 G.add_edge(node1, node2)
     return G
 
-nx.draw(er_graph(10, 0), node_size=30, node_color="gray")
+#nx.draw(er_graph(10, 0), node_size=30, node_color="gray")
 # plt.savefig("erdos_renyi_graph.pdf")
 # plt.show()
 
@@ -135,10 +135,43 @@ def basic_net_stats(G):
     print("G.number_of_edges()", G.number_of_edges())
     #print("Average degree", np.mean(list(G.degree().values())))
 
-basic_net_stats(G1)
-basic_net_stats(G2)
-plot_degree_distribution(G1)
-plot_degree_distribution(G2)
-plt.savefig("village.hist.pdf")
+# basic_net_stats(G1)
+# basic_net_stats(G2)
+# plot_degree_distribution(G1)
+# plot_degree_distribution(G2)
+# plt.savefig("village.hist.pdf")
+# plt.show()
+
+
+
+
+# Finding the Largest Connected Component
+gen = nx.connected_components(G1) #connected_component_subgraphs(G1) # use nx.connected_components
+g = gen.__next__() # generates component
+print(type(g))
+
+subgraphs = [G1.subgraph(component).copy() for component in gen]
+
+# Primer kako da radite sa podgrafovima
+for subgraph in subgraphs:
+    print(type(subgraph))  # Ovo će biti <class 'networkx.classes.graph.Graph'>
+    print(subgraph.number_of_nodes())
+    print(subgraph.nodes())
+    print(subgraph.edges())
+
+print(len(G1))
+
+G1_LCC_nodes = max(nx.connected_components(G1), key=len)
+G2_LCC_nodes = max(nx.connected_components(G2), key=len)
+
+G1_LCC = G1.subgraph(G1_LCC_nodes).copy()
+G2_LCC = G2.subgraph(G2_LCC_nodes).copy()
+
+print(len(G1_LCC))
+print(len(G2_LCC))
+
+plt.figure()
+nx.draw(G1_LCC, node_color="red", edge_color="gray", node_size=20)
+plt.savefig("village1.pdf")
 plt.show()
 
