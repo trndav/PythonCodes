@@ -35,14 +35,25 @@ rss = []
 slopes = np.arange(-10, 15, 0.01)
 for slope in slopes:
     rss.append(np.sum(y - beta_0 - slope * x) ** 2)
-print(rss)
+# print(rss)
 
 ind_min = np.argmin(rss)
-print(ind_min)
+# print(ind_min)
 print("Estimate of slope: ", slopes[ind_min])
 
-plt.figure()
-plt.plot(slopes, rss)
-plt.xlabel(("Slope"))
-plt.ylabel(("RSS"))
-plt.show()
+# plt.figure()
+# plt.plot(slopes, rss)
+# plt.xlabel(("Slope"))
+# plt.ylabel(("RSS"))
+# plt.show()
+
+
+import statsmodels.api as sm
+mod = sm.OLS(y, x)
+est = mod.fit()
+print(est.summary())
+
+X = sm.add_constant(x)
+mod = sm.OLS(y, X)
+est = mod.fit()
+print(est.summary())
