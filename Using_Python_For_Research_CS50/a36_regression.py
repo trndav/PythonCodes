@@ -100,3 +100,19 @@ coef = model.named_steps['linearregression'].coef_
 print(intercept)
 print(coef[0])
 print(coef[1])
+
+
+# Assessing Model Accuracy
+# compute the mean squared error (MSE) 
+# how to separate data into training and test datasets
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size = 0.5, random_state = 1)
+lm = LinearRegression(fit_intercept=True)
+# Fit
+lm.fit(X_train, y_train)
+print(lm.fit(X_train, y_train))
+lm.score(X_test, y_test)
+print(lm.score(X_test, y_test))
+
+
