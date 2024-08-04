@@ -42,21 +42,30 @@ class Solution:
                        "D": 500,
                        "M": 1000}
         
-        # Reverse iteration solution
-        num = 0
-        last = "I"
-        for numeral in s[::-1]:
-            if roman_table[numeral] < roman_table[last]:
-                print("first loop", roman_table[numeral])
-                num -= roman_table[numeral]
-            else:
-                num += roman_table[numeral]
-                print("second loop", roman_table[numeral])
-            last = numeral
+        # # Reverse iteration solution
+        # num = 0
+        # last = "I"
+        # for numeral in s[::-1]:
+        #     if roman_table[numeral] < roman_table[last]:
+        #         print("first loop", roman_table[numeral])
+        #         num -= roman_table[numeral]
+        #     else:
+        #         num += roman_table[numeral]
+        #         print("second loop", roman_table[numeral])
+        #     last = numeral
 
-        return num
+        # return num
 
 
+        # String conversion method
+        convert = {"IV": "IIII", "IX": "VIIII",
+                   "XL": "XXXX", "XC": "LXXXX",
+                   "CD": "CCCC", "CM": "DCCCC"}
+        
+        for k, v in convert.items():
+            s = s.replace(k, v)
+
+        return sum([roman_table[numeral] for numeral in s])
 
 x = Solution()
 print(x.romanToInt("MCMXCIV"))
