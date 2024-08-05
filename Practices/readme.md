@@ -2,6 +2,7 @@
 
 
 Leetcode.com
+https://leetcode.com/problems/longest-common-prefix/
 https://leetcode.com/problems/roman-to-integer/
 https://leetcode.com/problems/palindrome-number/
 https://leetcode.com/problems/zigzag-conversion/
@@ -11,6 +12,7 @@ https://leetcode.com/problems/add-two-numbers/description/
 https://leetcode.com/problems/two-sum/
 
 Python Programming Practice: LeetCode playlist
+https://www.youtube.com/watch?v=5nug0L9y1h4&list=PLiC1doDIe9rDFw1v-pPMBYvD6k1ZotNRO&index=10
 https://www.youtube.com/watch?v=_5MYW7n1U-I&list=PLiC1doDIe9rDFw1v-pPMBYvD6k1ZotNRO&index=8
 https://www.youtube.com/watch?v=QKGAgwXQUfc&list=PLiC1doDIe9rDFw1v-pPMBYvD6k1ZotNRO&index=6
 https://www.youtube.com/watch?v=4o-YuU9JrCY&list=PLiC1doDIe9rDFw1v-pPMBYvD6k1ZotNRO&index=5
