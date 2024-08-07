@@ -19,16 +19,38 @@ class Solution:
     def threeSum(self, nums: int): # -> List[List[int]]:
         
         #Brute force
+        # if len(nums) < 3:
+        #     return([])        
+        # triplets = []
+        # for i in range(0, len(nums)-2):
+        #     for j in range(i+1, len(nums)-1):
+        #         for k in range(j+1, len(nums)):
+        #             if (nums[i] + nums[j] + nums[k]) == 0:
+        #                 triplets.append(tuple(sorted([nums[i], nums[j], nums[k]])))
+        # return(list(set(triplets)))
+
+
+        # n^2 solution with sorting
         if len(nums) < 3:
-            return([])
-        
+            return([])        
         triplets = []
+
+        nums = sorted(nums)
         for i in range(0, len(nums)-2):
-            for j in range(i+1, len(nums)-1):
-                for k in range(j+1, len(nums)):
-                    if (nums[i] + nums[j] + nums[k]) == 0:
-                        triplets.append(tuple(sorted([nums[i], nums[j], nums[k]])))
-        return(list(set(triplets)))
+            lower = i + 1
+            upper = len(nums) - 1
+
+            while lower < upper:
+                s = nums[i] + nums[lower] + nums[upper]
+                if s == 0:
+                    triplets.append((nums[i], nums[lower], nums[upper]))
+                    lower += 1
+                elif s < 0:
+                    lower += 1
+                else:
+                    upper -= 1
+
+        return (list(set(triplets)))
 
 
 

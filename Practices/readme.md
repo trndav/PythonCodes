@@ -13,7 +13,7 @@ https://leetcode.com/problems/add-two-numbers/description/
 https://leetcode.com/problems/two-sum/
 
 Python Programming Practice: LeetCode playlist
-https://youtu.be/hNRS81I1OZ8?si=65EQ3HFqi7OFtZV1&t=492
+https://youtu.be/hNRS81I1OZ8?feature=shared&t=1369
 https://www.youtube.com/watch?v=5nug0L9y1h4&list=PLiC1doDIe9rDFw1v-pPMBYvD6k1ZotNRO&index=10
 https://www.youtube.com/watch?v=_5MYW7n1U-I&list=PLiC1doDIe9rDFw1v-pPMBYvD6k1ZotNRO&index=8
 https://www.youtube.com/watch?v=QKGAgwXQUfc&list=PLiC1doDIe9rDFw1v-pPMBYvD6k1ZotNRO&index=6
