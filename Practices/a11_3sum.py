@@ -31,27 +31,55 @@ class Solution:
 
 
         # n^2 solution with sorting
+        # if len(nums) < 3:
+        #     return([])        
+        # triplets = []
+
+        # nums = sorted(nums)
+        # for i in range(0, len(nums)-2):
+        #     lower = i + 1
+        #     upper = len(nums) - 1
+
+        #     while lower < upper:
+        #         s = nums[i] + nums[lower] + nums[upper]
+        #         if s == 0:
+        #             triplets.append((nums[i], nums[lower], nums[upper]))
+        #             lower += 1
+        #         elif s < 0:
+        #             lower += 1
+        #         else:
+        #             upper -= 1
+        # return (list(set(triplets)))
+
+
+        # n^2 solution with sorting - faster version
         if len(nums) < 3:
             return([])        
         triplets = []
-
         nums = sorted(nums)
-        for i in range(0, len(nums)-2):
+
+        for i in range(0, len(nums)-2):            
+            if nums[i] > 0:
+                break 
+            if nums[i] == nums[i-1] and i > 0:
+                continue 
+
             lower = i + 1
             upper = len(nums) - 1
 
             while lower < upper:
                 s = nums[i] + nums[lower] + nums[upper]
                 if s == 0:
-                    triplets.append((nums[i], nums[lower], nums[upper]))
+                    triplets.append((nums[i], nums[lower], nums[upper]))                    
+                    
+                if s <= 0:
                     lower += 1
-                elif s < 0:
-                    lower += 1
+                    while (nums[lower] == nums[lower - 1] and lower < upper):
+                        lower += 1
                 else:
                     upper -= 1
 
-        return (list(set(triplets)))
-
+        return (triplets)
 
 
 x = Solution()
