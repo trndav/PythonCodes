@@ -2,6 +2,7 @@
 
 
 Leetcode.com
+https://leetcode.com/problems/3sum-closest/
 https://leetcode.com/problems/3sum/
 https://leetcode.com/problems/longest-common-prefix/
 https://leetcode.com/problems/roman-to-integer/
@@ -13,6 +14,7 @@ https://leetcode.com/problems/add-two-numbers/description/
 https://leetcode.com/problems/two-sum/
 
 Python Programming Practice: LeetCode playlist
+https://www.youtube.com/watch?v=wrXTw96G3G4
 https://youtu.be/hNRS81I1OZ8?feature=shared&t=1369
 https://www.youtube.com/watch?v=5nug0L9y1h4&list=PLiC1doDIe9rDFw1v-pPMBYvD6k1ZotNRO&index=10
 https://www.youtube.com/watch?v=_5MYW7n1U-I&list=PLiC1doDIe9rDFw1v-pPMBYvD6k1ZotNRO&index=8
