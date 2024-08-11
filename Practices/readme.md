@@ -2,6 +2,7 @@
 
 
 Leetcode.com
+
 https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 https://leetcode.com/problems/3sum-closest/
 https://leetcode.com/problems/3sum/
@@ -15,6 +16,7 @@ https://leetcode.com/problems/add-two-numbers/description/
 https://leetcode.com/problems/two-sum/
 
 Python Programming Practice: LeetCode playlist
+https://www.youtube.com/watch?v=8xqZgLYaIpY
 https://www.youtube.com/watch?v=B4rILGeEE1E 
 https://www.youtube.com/watch?v=wrXTw96G3G4
 https://youtu.be/hNRS81I1OZ8?feature=shared&t=1369
