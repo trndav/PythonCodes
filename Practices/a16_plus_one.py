@@ -11,7 +11,7 @@ Explanation: The array represents the integer 123.
 Incrementing by one gives 123 + 1 = 124.
 Thus, the result should be [1,2,4].
 
-https://youtu.be/WQMURqqQxk8?feature=shared&t=177
+https://youtu.be/WQMURqqQxk8?feature=shared&t=418
 '''
 
 class Solution:
@@ -19,13 +19,16 @@ class Solution:
     #def plusOne(self, digits: List[int]) -> List[int]:
     def plusOne(self, digits: int) -> int:
         
-        number = int(''.join(map(str, digits)))
-        number = number + 1
-        arr = []
-        for num in str(number):
-            arr.append(int(num))
-        return arr
-        
+        #Method 1
+        # number = int(''.join(map(str, digits)))
+        # number = number + 1
+        # arr = []
+        # for num in str(number):
+        #     arr.append(int(num))
+        # return arr
+
+        #Method 2
+        return [int(x) for x in str(int("".join([str(i) for i in digits])) + 1)]
 
 x = Solution()
 print(x.plusOne([1,2,3]))
