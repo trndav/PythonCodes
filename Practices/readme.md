@@ -2,7 +2,7 @@
 
 
 Leetcode.com
-
+- https://leetcode.com/problems/plus-one/
 - https://leetcode.com/problems/length-of-last-word/
 - https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 - https://leetcode.com/problems/3sum-closest/

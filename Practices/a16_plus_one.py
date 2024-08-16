@@ -28,7 +28,17 @@ class Solution:
         # return arr
 
         #Method 2
-        return [int(x) for x in str(int("".join([str(i) for i in digits])) + 1)]
+        # return [int(x) for x in str(int("".join([str(i) for i in digits])) + 1)]
+
+        # Method 3 - reverse list addition
+        for i in range(len(digits)-1,-1,-1):
+            if digits[i] == 9:
+                digits[i] = 0
+            else:
+                digits[i] += 1
+                return digits
+        return [1] + digits
+
 
 x = Solution()
-print(x.plusOne([1,2,3]))
+print(x.plusOne([9,9,9]))
