@@ -19,14 +19,26 @@ class Solution:
         # return int(math.sqrt(x))
         
         # Method 2 - not good for numbers like 8
-        counter = 0
-        adder = 0
-        while x != 0:
-            x = x - (adder + 1)
-            counter += 1
-            adder = adder + 2
-            print(x)
-        return counter // 1
+        # counter = 0
+        # adder = 0
+        # while x != 0:
+        #     x = x - (adder + 1)
+        #     counter += 1
+        #     adder = adder + 2
+        #     print(x)
+        # return counter // 1
+
+        # Method 3 exponent solution
+        # return int(x**(1/2))
+
+        # Some method
+        i = 0
+        while i*i < x:
+            i+=1
+        if i*i == x:
+            return i
+        elif i*i > x:
+            return i - 1
 
 x = Solution()
-print(x.mySqrt(16))
+print(x.mySqrt(8))

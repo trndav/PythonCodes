@@ -18,7 +18,7 @@ Leetcode.com
 - https://leetcode.com/problems/two-sum/
 
 Python Programming Practice: LeetCode playlist
-- https://www.youtube.com/watch?v=RQmjgvWbMd8&list=PLiC1doDIe9rDFw1v-pPMBYvD6k1ZotNRO&index=16
+- https://youtu.be/RQmjgvWbMd8?feature=shared&t=229
 - https://www.youtube.com/watch?v=WQMURqqQxk8&list=PLiC1doDIe9rDFw1v-pPMBYvD6k1ZotNRO&index=15
 - https://www.youtube.com/watch?v=_zXpdlYQ0QQ&list=PLiC1doDIe9rDFw1v-pPMBYvD6k1ZotNRO&index=14
 - https://www.youtube.com/watch?v=8xqZgLYaIpY
