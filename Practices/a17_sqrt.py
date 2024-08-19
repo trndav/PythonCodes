@@ -32,13 +32,25 @@ class Solution:
         # return int(x**(1/2))
 
         # Some method
-        i = 0
-        while i*i < x:
-            i+=1
-        if i*i == x:
-            return i
-        elif i*i > x:
-            return i - 1
+        # i = 0
+        # while i*i < x:
+        #     i+=1
+        # if i*i == x:
+        #     return i
+        # elif i*i > x:
+        #     return i - 1
+
+        # Babylonian method
+        if x <= 1:
+            x
+        else:
+            x_n = 0.5 * x
+            change = 1
+            while change > 0.01:
+                next_n = 0.5 * (x_n + x/x_n)
+                change = abs(x_n - next_n)
+                x_n = next_n 
+            return int(x_n)
 
 x = Solution()
-print(x.mySqrt(8))
+print(x.mySqrt(16))
