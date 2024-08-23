@@ -16,13 +16,22 @@ class Solution:
     #def singleNumber(self, nums: List[int]) -> int:
     def singleNumber(self, nums) -> int:
         
-        counts = {}
-        for n in nums:
-            if n not in counts:
-                counts[n] = 1
-            else:
-                del counts[n]
-        return list(counts.keys())[0]
+        # counts = {}
+        # for n in nums:
+        #     if n not in counts:
+        #         counts[n] = 1
+        #     else:
+        #         del counts[n]
+        # return list(counts.keys())[0]
+
+        x = 0
+        for i in range(len(nums)):
+            x = x^nums[i]
+            print("i", i)
+            print("nums[i]", nums[i])
+            print("x^nums[i]", x^nums[i])
+            print(x)
+        return x
 
 x = Solution()
-print(x.singleNumber([2,2,3]))  # Should output 5 not 4
+print(x.singleNumber([2,2,3,3,4]))  # Should output 5 not 4
