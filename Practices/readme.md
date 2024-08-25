@@ -2,6 +2,7 @@
 
 
 Leetcode.com
+- https://leetcode.com/problems/majority-element/
 - https://leetcode.com/problems/single-number/description/
 - https://leetcode.com/problems/maximum-depth-of-binary-tree/
 - https://leetcode.com/problems/climbing-stairs/description/
@@ -21,6 +22,7 @@ Leetcode.com
 - https://leetcode.com/problems/two-sum/
 
 Python Programming Practice: LeetCode playlist
+- https://youtu.be/eqX3WZGpma4?feature=shared&t=381
 - https://youtu.be/d9yH_X0p7mI?si=NK3SF9YXWQ5dnB21&t=359
 - https://www.youtube.com/watch?v=gMhTUfQLr2E
 - https://www.youtube.com/watch?v=IRfKXVN2f2g
