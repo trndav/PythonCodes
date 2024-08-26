@@ -17,16 +17,23 @@ class Solution:
     #def majorityElement(self, nums: List[int]) -> int:
     def majorityElement(self, nums) -> int:
 
-        sums = {}
-        for n in nums:
-            if n not in sums:
-                sums[n] = 1
-            else:
-                sums[n] += 1
+        # Method 1
+        # sums = {}
+        # for n in nums:
+        #     if n not in sums:
+        #         sums[n] = 1
+        #     else:
+        #         sums[n] += 1
             
-            if sums[n] > len(nums)/2:
-                return n
+        #     if sums[n] > len(nums)/2:
+        #         return n
 
+        #Method 2
+        # x = sorted(nums)
+        # return x[len(x)//2]
+
+        # Shorter
+        return sorted(nums)[len(nums)//2]
 
 x = Solution()
 print(x.majorityElement([3,2,3])) 
