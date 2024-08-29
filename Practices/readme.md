@@ -2,6 +2,7 @@
 
 
 Leetcode.com
+- https://leetcode.com/problems/fibonacci-number/description/
 - https://leetcode.com/problems/move-zeroes/description/
 - https://leetcode.com/problems/majority-element/
 - https://leetcode.com/problems/single-number/description/
@@ -23,6 +24,7 @@ Leetcode.com
 - https://leetcode.com/problems/two-sum/
 
 Python Programming Practice: LeetCode playlist
+- https://youtu.be/lnF_9hXD05k?feature=shared&t=384
 - https://youtu.be/JYX2BdMGSNw?feature=shared&t=261
 - https://youtu.be/eqX3WZGpma4?feature=shared&t=381
 - https://youtu.be/d9yH_X0p7mI?si=NK3SF9YXWQ5dnB21&t=359
