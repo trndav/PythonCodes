@@ -19,15 +19,21 @@ Explanation: F(3) = F(2) + F(1) = 1 + 1 = 2.
 '''
 class Solution:
     def fib(self, n: int) -> int:
+        # Method 1
+        # if n == 0:
+        #     return 0
+        # if n == 1:
+        #     return 1        
+        # print(f"fib 1: {self.fib(n-1)}, fib 2: {self.fib(n-2)}")
+        # return (self.fib(n-1) + self.fib(n-2))
 
-        if n == 0:
-            return 0
-        if n == 1:
-            return 1
+        # Method 2
+        seen = {0: 0, 1: 1}
+        for i in range(2, n+1):
+            seen[i] = seen[i-1] + seen[i-2]
         
-        #print(f"fib 1: {self.fib(n-1)}, fib 2: {self.fib(n-2)}")
-        return (self.fib(n-1) + self.fib(n-2))
+        print(seen)
+        return seen[n]
 
 
-x = Solution()
-print(x.fib(3)) 
+
