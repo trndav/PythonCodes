@@ -16,16 +16,19 @@ class Solution:
         # Two pointers: 'i' is the slow-runner, 'j' is the fast-runner
         i = 0  # slow pointer (marks the position for unique elements)
 
+        #print(len(nums))
         # Iterate through the array 
-        for j in range(1, len(nums)):
+        for j in range(1, len(nums)):            
             # If the current number is different from the last unique one
             if nums[j] != nums[i]:
+                print(nums[j], nums[i])
                 i += 1  # Move the slow pointer forward
                 nums[i] = nums[j]  # Update the position with the new unique value
+                #print(nums[j], nums[i])
 
         # 'i + 1' is the number of unique elements
         return i + 1
 
 x = Solution()
 print(x.removeDuplicates([1,1,2,2,3]))
-print(x.removeDuplicates([]))
+#print(x.removeDuplicates([]))
