@@ -50,6 +50,7 @@ class Solution:
                 
                 # Check the 3x3 box
                 box_index = (r // 3) * 3 + (c // 3)
+                print(box_index)
                 if num in boxes[box_index]:
                     return False
                 boxes[box_index].add(num)
@@ -57,7 +58,7 @@ class Solution:
         # If no violations are found, the board is valid
         return True
     
-board = [["8","3",".",".","7",".",".",".","."]
+board = [["5","3",".",".","7",".",".",".","."]
 ,["6",".",".","1","9","5",".",".","."]
 ,[".","9","8",".",".",".",".","6","."]
 ,["8",".",".",".","6",".",".",".","3"]
