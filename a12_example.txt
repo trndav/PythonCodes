@@ -1,3 +1,6 @@
 Some text
 Test
 Another line
+Functions addon
+Added with
+Another line
