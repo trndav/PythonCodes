@@ -4,3 +4,8 @@ Another line
 Functions addon
 Added with
 Another line
+Adding history log
+Added history log
+Checking history log
+Task successful
+Testing app
