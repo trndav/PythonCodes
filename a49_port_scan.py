@@ -8,7 +8,7 @@ def scan_port(target_host, port):
         sock.settimeout(1)
         result = sock.connect_ex((target_host, port))
         if result == 0:
-            print(f"Port {port}: Open")
+            print(f"Port {port} is open")
         sock.close()
     except:
         pass
