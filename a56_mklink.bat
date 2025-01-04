@@ -1,0 +1,1 @@
+cmd /c "mklink C:\Users\Public\Desktop\TestShortcut d:\test.bat"
