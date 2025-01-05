@@ -14,6 +14,3 @@ cscript //nologo create_shortcut.vbs
 
 :: Clean up
 del create_shortcut.vbs
-
-echo Shortcut created successfully at %SHORTCUT_PATH%
-pause
