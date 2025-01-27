@@ -29,26 +29,61 @@
 
 
 
-def ensure_positive(func):
-    def wrapper(*args, **kwargs):
-        for arg in args:
-            if arg < 0:
-                raise ValueError(f"Negative value detected: {arg}")
-        print("All arguments are positive!")
-        return func(*args, **kwargs)
+# def ensure_positive(func):
+#     def wrapper(*args, **kwargs):
+#         for arg in args:
+#             if arg < 0:
+#                 raise ValueError(f"Negative value detected: {arg}")
+#         print("All arguments are positive!")
+#         return func(*args, **kwargs)
+#     return wrapper
+
+# @ensure_positive
+# def add_numbers(a, b):
+#     return a + b
+
+# try:
+#     result = add_numbers(5, 3)
+#     print(f"Result: {result}")
+    
+#     result = add_numbers(5, -2)
+# except ValueError as e:
+#     print(e)
+
+# print(add_numbers(4, 2))
+# print(add_numbers(4, -2))
+
+
+
+
+
+# Test deco
+
+# def raised(func):
+#     def wrapper(*args):
+#         print("Ready to do some magic!")
+#         modified_args = tuple(x*2 for x in args)
+#         return func(*modified_args)
+#     return wrapper
+
+# @raised
+# def add_numbers(a, b):
+#     return a + b
+
+# print(add_numbers(2, 4))
+
+
+
+# Test deco
+def raised(func):
+    def wrapper(*args):
+        print("Ready to do some magic!")
+        modified_args = tuple(map(lambda x: x*2, args))
+        return func(*modified_args)
     return wrapper
 
-@ensure_positive
+@raised
 def add_numbers(a, b):
     return a + b
 
-try:
-    result = add_numbers(5, 3)
-    print(f"Result: {result}")
-    
-    result = add_numbers(5, -2)
-except ValueError as e:
-    print(e)
-
-print(add_numbers(4, 2))
-print(add_numbers(4, -2))
+print(add_numbers(2, 4))
