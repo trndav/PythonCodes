@@ -35,3 +35,5 @@ for k in range(1, 11):
     y_pred = knn.predict(X_test)
     acc = accuracy_score(y_test, y_pred)
     print(f"K={k}, Accuracy={acc * 100:.2f}%")
+
+
