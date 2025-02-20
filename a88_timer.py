@@ -16,3 +16,5 @@ class Timer:
 # Use the context manager
 with Timer():
     time.sleep(2)  # Simulate a task
+
+Timer()
