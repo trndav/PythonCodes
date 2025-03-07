@@ -52,6 +52,15 @@ print(f"Coefficient (slope): {slope}")
 print(f"Intercept: {intercept}")
 
 
+# Ask user for input
+num_rooms = float(input("Enter the number of rooms: "))
+
+# Predict house price based on user input
+predicted_price = model.predict(np.array([[num_rooms]]))[0]  # Convert input to 2D array
+
+print(f"Predicted House Price: ${predicted_price * 100000:.2f}")
+
+
 # Plot the regression line
 plt.scatter(X_test, y_test, color='blue', label="Actual Prices")
 plt.plot(X_test, y_pred, color='red', linewidth=2, label="Predicted Prices")
