@@ -18,3 +18,4 @@ The script will speed up win 10 devices by removing the startup of some applicat
 # Other stuff
 25.03.2025. practicing python on http://boot.dev got 11 levels on basics.
 11.5.2025. last few days solving tasks on tryhackme.com
+12.5.2025. learning from Cisco course ans tryhackme.
