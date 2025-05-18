@@ -22,3 +22,4 @@ The script will speed up win 10 devices by removing the startup of some applicat
 13.5.2025. learning from Cisco course and tryhackme.
 14.5. learning Cisco and tryhackme Cyber Security 101
 15-16.5. learning Cisco Junior Cyber Security Analyst and tryhackme Cyber Security 101
+17-18.5. learning tryhackme Cyber Security 101
