@@ -32,3 +32,4 @@ The script will speed up win 10 devices by removing the startup of some applicat
 25.5. learning tryhackme Cyber Security 101, built Py script for shortcuts I need
 26.5. learning Cisco Junior Cyber Security Analyst and tryhackme Cyber Security 101
 27.5. learning Cisco Junior Cyber Security Analyst and tryhackme Cyber Security 101
+28.5. finished Cisco Junior Cyber Security Analyst Final Exam, and tryhackme Cyber Security 101
