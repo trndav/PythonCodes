@@ -34,3 +34,5 @@ The script will speed up win 10 devices by removing the startup of some applicat
 27.5. learning Cisco Junior Cyber Security Analyst and tryhackme Cyber Security 101
 28.5. finished Cisco Junior Cyber Security Analyst Final Exam, and tryhackme Cyber Security 101
 29.5. started Harvard CS50 Cyber Security, and tryhackme Cyber Security 101
+30.5. learning Harvard CS50 Cyber Security, and tryhackme Cyber Security 101
+31.5. learning Harvard CS50 Cyber Security, and tryhackme Cyber Security 101
