@@ -39,3 +39,5 @@ The script will speed up win 10 devices by removing the startup of some applicat
 1.6. learning tryhackme Cyber Security 101
 2.6. learning tryhackme Cyber Security 101
 3.6. learning Harvard CS50 Cyber Security, and tryhackme Cyber Security 101
+4.6. learning tryhackme Cyber Security 101
+5.6. learning tryhackme Cyber Security 101
