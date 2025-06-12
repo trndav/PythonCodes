@@ -43,3 +43,4 @@ The script will speed up win 10 devices by removing the startup of some applicat
 5.6. learning tryhackme Cyber Security 101
 8.6. finished tryhackme Cyber Security 101 certificate
 9.6. started tryhackme Junior Penetration Tester
+12.6. learning tryhackme Junior Penetration Tester
