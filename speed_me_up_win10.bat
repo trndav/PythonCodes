@@ -191,7 +191,7 @@ schtasks /Change /TN "\Microsoft\Windows\Speech\SpeechModelDownloadTask" /Disabl
 schtasks /Change /TN "\Microsoft\Windows\Mobile Broadband Accounts\MNO Metadata Parser" /Disable
 
 :: Deleting Win temp folder and skip if cant delete
-del /s /q "C:\Windows\Temp\*.*" && rmdir /s /q "C:\Path\To\Your\Folder"
+del /s /q "C:\Windows\Temp\*.*"
 
 :: Brisanje temp foldera od svih korisnika
 setlocal enabledelayedexpansion
@@ -215,8 +215,21 @@ for /d %%D in ("%inputDir%\*") do (
 endlocal 
 
 :: Disable and uninstall Onedrive
+echo Uninstall OneDrive
 taskkill /f /im OneDrive.exe
 %SystemRoot%\SysWOW64\OneDriveSetup.exe /uninstall
+
+:: Disable DiagTrack Telemetry
+echo Disabling DiagTrack Telemetry
+powershell -Command "Set-Service DiagTrack -StartupType Disabled"
+
+:: Disable GUI on startup
+echo Disabling GUI on startup
+cmd.exe /c "bcdedit /set quietboot on"
+
+:: Run sfc /scannow scans and repairs corrupted or missing system files
+echo sfc /scannow komanda skenira i popravlja korumpirane sistemske dokumente koji fale. Ako je presporo možete ugasiti prozor, ostalo je sve napravljeno.
+sfc /scannow
  
 :: Final message
 echo Skripta je zavrsila sa radom.
