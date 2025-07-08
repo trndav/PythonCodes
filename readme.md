@@ -46,3 +46,4 @@ The script will speed up win 10 devices by removing the startup of some applicat
 12.6. learning tryhackme Junior Penetration Tester
 17.6. learning Harvard CS50 Cyber Security and tryhackme Junior Penetration Tester
 21.6. learning Harvard CS50 Cyber Security and tryhackme Junior Penetration Tester
+8.7. learning Harvard CS50 Cyber Security and tryhackme Junior Penetration Tester
