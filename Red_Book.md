@@ -4,7 +4,7 @@
 
 <table>
   <tr>
-Test  <br>
+<th>Test  <br></th>
 Test 2  
 Test 3
   </tr>
