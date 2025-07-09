@@ -5,7 +5,7 @@
 <table>
   <tr>
     <td align="left">
-      <strong>GOBUSTER CRAWLER BRUTE FORCE WEBSITE PAGES</strong><br>
+      <strong>GOBUSTER CRAWLER BRUTE FORCE SEARCH WEBPAGES</strong><br>
       Using wordlist, search for directories on webserver to detect what pages webserver have.<br>
       gobuster -u http://WEBPAGE -w WORDLIST.txt dir<br>
       -u is used to state the website we're scanning<br>
