@@ -4,9 +4,13 @@
 
 <table>
   <tr>
-<th>Test  <br></th>
-Test 2  
-Test 3
+    <th>**GOBUSTER CRAWLER BRUTE FORCE WEBSITE PAGES**<br>
+Using wordlist, search for directories on webserver to detect what pages webserver have. <br>
+gobuster -u http://WEBPAGE -w WORDLIST.txt dir <br>
+-u is used to state the website we're scanning <br> 
+-w takes a list of words to iterate through to find hidden pages <br>
+-dir search for directories
+    </th>
   </tr>
 </table>
 
