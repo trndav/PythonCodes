@@ -3,6 +3,19 @@
 <h3 align="center"> Tryhackme and other sources</h3>
 
 <table>
+<tr>
+<td align="left">
+<strong>RAR2JOHN</strong><br>
+Brute force RAR file.<br>
+rar2john [rar file] > [output file] <br>
+First, extract the hash (password hash) from a RAR file:<br>
+/opt/john/rar2john rarfile.rar > rar_hash.txt<br>
+Brute force file with rar hash:<br>
+john --wordlist=/usr/share/wordlists/rockyou.txt rar_hash.txt<br>
+Unpack password protected rar file and enter password found.<br>
+unrar rarfile.rar
+</td>
+</tr>
   <tr>
     <td align="left">
       <strong>GOBUSTER CRAWLER BRUTE FORCE SEARCH WEBPAGES</strong><br>
