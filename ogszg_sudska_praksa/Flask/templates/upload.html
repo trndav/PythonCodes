@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dodaj sudsku praksu</title>
+<style>
+  /* Custom spacing */
+  .container {
+      margin-bottom: 1px;
+  }
+  ul {
+      padding-left: 20px;
+  }
+  li {
+      margin-bottom: 1px;
+  }
+  hr {
+      margin-top: 1px;
+      margin-bottom: 1px;
+  }
+  /* Tighter line spacing inside texts */
+  p, a, span {
+      line-height: 1.3;
+  }
+  /* Optional: tighter form spacing */
+  form {
+      margin-bottom: 10px;
+  }
+  /* Style for content frames */
+  .content-frame {
+    margin: 0 auto; /* centers the frame */
+    border: 2px solid #dee2e6; /* light border */
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff; /* optional background */
+    max-width: 90%; /* consistent width */
+  }
+  .align-container {
+    max-width: 90%;
+    margin: 0 auto; /* centers the container */
+}
+</style>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+<body>
+    <div class="align-container my-3">
+      <div class="my-3 text-left">
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Povratak na početnu stranicu</a>
+      </div>
+    </div>
+    <!-- Add .docx file to database -->
+    <div class="container my-4">
+      <h1 class="mb-4 text-center">Dodaj sudsku praksu</h1>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          {% if message %}
+          <hr>
+            <h4 style="color: green; text-align: center;">{{ message }}</h4>
+            <hr>
+          {% endif %}
+          <form method="POST" enctype="multipart/form-data" class="card p-3 shadow-sm">
+            <div class="mb-3">
+              <label for="fileUpload" class="form-label">Odaberite .DOCX datoteku</label>
+              <input class="form-control" type="file" id="fileUpload" name="file" accept=".docx" required>
+            </div>
+            <!-- Customize button text here -->
+            <button type="submit" class="btn btn-primary w-100 mb-2">Učitaj</button>
+          </form>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <div class="container my-4">
+      <h3 class="mb-4 text-center">Pravila dodavanja</h3>
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+          <p>Slijedite upute kako bi se dokument pravilno dodao u databazu. Na slici je prikazano kako sudska praksa treba izgledati da bi se pravilno učitala.</p>
+          <div style="text-align: center;">
+            <img src="{{ url_for('static', filename='Upute.jpg') }}" alt="Upute" />
+          </div>
+          <p>1. Dokument treba početi sa brojem i točkom. Treba napisati broj ako ga nema. (na slici 1.)</p>
+          <p>2. Sljedeći red nakon broja, treba biti oznaka predmeta i datum. Taj dio teksta mora biti boldan. (na slici 2.)</p>
+          <p>3. Sljedeći red nakon oznake predmeta, u jednom redu treba navesti članke zakona koji se odnose na taj predmet. Taj dio teksta mora biti boldan. (na slici 3.)</p>
+          <p>4. Sljedeći red nakon članaka zakona, treba početi sa - i tu treba navesti opis presude. Taj dio teksta mora biti boldan. (na slici 4.)</p>
+          <p>5. Sljedeći red nakon opisa presude, pa sve do kraja dokumenta je sav ostali sadržaj sudske prakse. (na slici 5.)</p>
+        </div>
+      </div>
+    </div>
+<!-- Bootstrap JS Bundle (includes Popper) -->
+<script src="{{ url_for('static', filename='bootstrap/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

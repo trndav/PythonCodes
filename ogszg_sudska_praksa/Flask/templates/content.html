@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ record['name']|striptags }}</title>
+<style>
+  /* Custom spacing */
+  .container {
+      margin-bottom: 1px;
+  }
+  ul {
+      padding-left: 20px;
+  }
+  li {
+      margin-bottom: 1px;
+  }
+  hr {
+      margin-top: 1px;
+      margin-bottom: 1px;
+  }
+  /* Tighter line spacing inside texts */
+  p, a, span {
+      line-height: 1.3;
+  }
+  /* Optional: tighter form spacing */
+  form {
+      margin-bottom: 10px;
+  }
+          .content-frame {
+            margin: 0 auto; /* centers the frame */
+            border: 2px solid #dee2e6; /* light border */
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #fff; /* optional background */
+            max-width: 90%;
+        }
+.align-container {
+    max-width: 90%;
+    margin: 0 auto; /* centers the container */
+}
+</style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+</head>
+<body>
+    <!-- Button to return to homepage -->
+    <div class="align-container my-3">
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Povratak na početnu stranicu</a>
+    </div>
+    <div class="content-frame my-3" style="max-width: 90%;">
+    <h3>{{ record['name']|safe }}</h3>
+
+
+<p>{{ record['source']|highlight(keyword) }}</p>
+<p>{{ record['about']|highlight(keyword) }}</p>
+<p>{{ record['content']|highlight(keyword) }}</p>
+    </div>
+        <!-- Button to return to homepage -->
+    <div class="align-container my-3">
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Povratak na početnu stranicu</a>
+    </div>
+</body>
+</html>

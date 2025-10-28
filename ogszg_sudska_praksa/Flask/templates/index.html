@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sudska praksa OGSZG</title>
+<style>
+  /* Custom spacing */
+  .container {
+      margin-bottom: 1px;
+  }
+  ul {
+      padding-left: 20px;
+  }
+  li {
+      margin-bottom: 1px;
+  }
+  hr {
+      margin-top: 1px;
+      margin-bottom: 1px;
+  }
+  /* Tighter line spacing inside texts */
+  p, a, span {
+    line-height: 1.3;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding: 0;
+    margin: 0;
+    height: auto; /* ensure height is minimal */
+  }
+    p:empty {
+    display: none;
+    }
+  /* Optional: tighter form spacing */
+  form {
+      margin-bottom: 10px;
+  }
+  /* Style for content frames */
+  .content-frame {
+    margin: 0 auto; /* centers the frame */
+    border: 2px solid #dee2e6; /* light border */
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff; /* optional background */
+    max-width: 90%; /* consistent width */
+  }
+  /* Add in your style section */
+.align-container {
+    max-width: 90%;
+    margin: 0 auto; /* centers the container */
+}
+  /* Reset margin and padding for divs used as blocks */
+</style>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+</head>
+<body>
+
+
+<div class="container-fluid my-3">
+
+
+    {% if search_performed %}
+    <!-- Button to return to homepage -->
+    <div class="align-container my-3">
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Povratak na početnu stranicu</a>
+    </div>
+    {% endif %}
+
+
+    <!-- Main content frame -->
+    <div class="content-frame my-3">
+        <h3>Sudska praksa OGSZG</h3>
+        <p>Broj predmeta u OGSZG sudskoj praksi: <b>{{ total_rows }}</b></p>
+       
+        <!-- Search and upload buttons -->
+        <div class="row align-items-center mb-3">
+            <!-- Search form -->
+            <div class="col-md-6 mb-3 mb-md-0">
+                <form method="POST" action="/" class="d-flex">
+                    <input type="text" name="keyword" placeholder="Pretraži sudsku praksu" class="form-control me-2" required>
+                    <button type="submit" class="btn btn-primary">Traži</button>
+                </form>
+            </div>
+            <!-- Upload button -->
+            <div class="col-md-6 text-center">
+                <form method="GET" action="/upload">
+                    <button type="submit" class="btn btn-success btn-lg">Dodaj sudsku praksu</button>
+                </form>
+            </div>
+        </div>
+        {% if results %}
+            <p>Za ključnu riječ "<b>{{ keyword }}</b>" broj pronađenih rezultata je <b>{{ results|length }}</b>.</p>
+            <hr>            
+            {% for row in results %}                
+                <a href="{{ url_for('content', pr_id=row['id'], keyword=keyword) }}">
+                    {{ row['name']|safe }}
+                </a>
+                <p>{{ row['source']|highlight(keyword) }}</p>
+                <p>{{ row['about']|highlight(keyword) }}</p>
+                <p>{{ row['content']|highlight(keyword) }}</p>                
+                <hr>
+            {% endfor %}
+           
+            {% elif keyword %}
+                <p>Nisu pronađeni rezultati za ključnu riječ "{{ keyword }}".</p>
+            {% endif %}
+    </div>
+    {% if search_performed %}
+        <!-- Button to return to homepage -->
+        <div class="align-container my-3">
+            <a href="{{ url_for('index') }}" class="btn btn-primary">Povratak na početnu stranicu</a>
+        </div>
+    {% endif %}
+</div> <!-- end container -->
+
+
+</body>
+</html>
